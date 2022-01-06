@@ -1,0 +1,3 @@
+C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
+C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Source\MyProject\Hand.h
+C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\Hand.generated.h
