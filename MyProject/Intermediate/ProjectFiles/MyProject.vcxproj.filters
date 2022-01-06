@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\MyProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{4741C9DC-B53F-4B6A-AF6E-B8C8F95CBD25}</UniqueIdentifier>
+      <UniqueIdentifier>{EB4B9D60-19A0-4127-A611-76182F22AD19}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{E0C6D31F-4CB6-4427-914B-77FD385B31AF}</UniqueIdentifier>
+      <UniqueIdentifier>{311813DE-1B3D-4494-9C8C-8131DE72EFB3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,8 +24,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\MyProject">
-      <UniqueIdentifier>{AFB020C7-4637-46AC-9198-708D74E085B7}</UniqueIdentifier>
+      <UniqueIdentifier>{5ECEF727-9C5A-48E0-81F3-27D4544625D3}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\MyProject\Gun.cpp">
+      <Filter>Source\MyProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyProject\Gun.h">
+      <Filter>Source\MyProject</Filter>
+    </ClInclude>
     <None Include="..\..\Source\MyProject\MyProject.Build.cs">
       <Filter>Source\MyProject</Filter>
     </None>
