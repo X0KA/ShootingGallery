@@ -2,4 +2,8 @@ C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\W
 C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Source\MyProject/Hand.h
+C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Source\MyProject\Gun.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/SplineComponent.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SplineComponent.generated.h
+C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\Gun.generated.h
 C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\Hand.generated.h

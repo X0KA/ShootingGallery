@@ -3,9 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Gun.h"
 #include "Components/SceneComponent.h"
 #include "Hand.generated.h"
-
+ 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class MYPROJECT_API UHand : public USceneComponent
@@ -26,8 +27,6 @@ public:
 
 public:
 
-	UPROPERTY(EditAnywhere, Category = "Weapons")
-	TArray<UBlueprint*> weapons;
-
-	UBlueprint* currentWeapon=nullptr;
+	//Weapon being currently used by this hand
+	AGun* currentWeapon;
 };

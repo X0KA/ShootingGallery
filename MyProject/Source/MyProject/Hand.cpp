@@ -18,10 +18,6 @@ UHand::UHand()
 void UHand::BeginPlay()
 {
 	Super::BeginPlay();
-	if (weapons.Num()!=0)
-		currentWeapon = weapons[0];
-
-	// ...
 	
 }
 

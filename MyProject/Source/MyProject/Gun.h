@@ -2,7 +2,6 @@
 
 #pragma once
 
-
 #include "CoreMinimal.h"
 #include "Components/SplineComponent.h"
 #include "GameFramework/Actor.h"
@@ -43,8 +42,8 @@ public:
 public:
 
 	//Root scene component
-	UPROPERTY(EditAnyWhere)
-	USceneComponent* sceneComponent = nullptr;
+	UPROPERTY()
+	USceneComponent* rootSceneComponent = nullptr;
 	
 	//Spline defining where the gun is aming at
 	UPROPERTY(EditAnyWhere)
