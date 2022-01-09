@@ -13,10 +13,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MYPROJECT_Gun_generated_h
 
-#define MyProject_Source_MyProject_Gun_h_12_SPARSE_DATA
-#define MyProject_Source_MyProject_Gun_h_12_RPC_WRAPPERS
-#define MyProject_Source_MyProject_Gun_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define MyProject_Source_MyProject_Gun_h_12_INCLASS_NO_PURE_DECLS \
+#define MyProject_Source_MyProject_Gun_h_14_SPARSE_DATA
+#define MyProject_Source_MyProject_Gun_h_14_RPC_WRAPPERS
+#define MyProject_Source_MyProject_Gun_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define MyProject_Source_MyProject_Gun_h_14_EVENT_PARMS
+#define MyProject_Source_MyProject_Gun_h_14_CALLBACK_WRAPPERS
+#define MyProject_Source_MyProject_Gun_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGun(); \
 	friend struct Z_Construct_UClass_AGun_Statics; \
@@ -25,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(AGun)
 
 
-#define MyProject_Source_MyProject_Gun_h_12_INCLASS \
+#define MyProject_Source_MyProject_Gun_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesAGun(); \
 	friend struct Z_Construct_UClass_AGun_Statics; \
@@ -34,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(AGun)
 
 
-#define MyProject_Source_MyProject_Gun_h_12_STANDARD_CONSTRUCTORS \
+#define MyProject_Source_MyProject_Gun_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGun(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGun) \
@@ -47,7 +49,7 @@ private: \
 public:
 
 
-#define MyProject_Source_MyProject_Gun_h_12_ENHANCED_CONSTRUCTORS \
+#define MyProject_Source_MyProject_Gun_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGun(AGun&&); \
@@ -58,28 +60,33 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGun); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGun)
 
 
-#define MyProject_Source_MyProject_Gun_h_12_PRIVATE_PROPERTY_OFFSET
-#define MyProject_Source_MyProject_Gun_h_9_PROLOG
-#define MyProject_Source_MyProject_Gun_h_12_GENERATED_BODY_LEGACY \
+#define MyProject_Source_MyProject_Gun_h_14_PRIVATE_PROPERTY_OFFSET
+#define MyProject_Source_MyProject_Gun_h_11_PROLOG \
+	MyProject_Source_MyProject_Gun_h_14_EVENT_PARMS
+
+
+#define MyProject_Source_MyProject_Gun_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyProject_Source_MyProject_Gun_h_12_PRIVATE_PROPERTY_OFFSET \
-	MyProject_Source_MyProject_Gun_h_12_SPARSE_DATA \
-	MyProject_Source_MyProject_Gun_h_12_RPC_WRAPPERS \
-	MyProject_Source_MyProject_Gun_h_12_INCLASS \
-	MyProject_Source_MyProject_Gun_h_12_STANDARD_CONSTRUCTORS \
+	MyProject_Source_MyProject_Gun_h_14_PRIVATE_PROPERTY_OFFSET \
+	MyProject_Source_MyProject_Gun_h_14_SPARSE_DATA \
+	MyProject_Source_MyProject_Gun_h_14_RPC_WRAPPERS \
+	MyProject_Source_MyProject_Gun_h_14_CALLBACK_WRAPPERS \
+	MyProject_Source_MyProject_Gun_h_14_INCLASS \
+	MyProject_Source_MyProject_Gun_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define MyProject_Source_MyProject_Gun_h_12_GENERATED_BODY \
+#define MyProject_Source_MyProject_Gun_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyProject_Source_MyProject_Gun_h_12_PRIVATE_PROPERTY_OFFSET \
-	MyProject_Source_MyProject_Gun_h_12_SPARSE_DATA \
-	MyProject_Source_MyProject_Gun_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	MyProject_Source_MyProject_Gun_h_12_INCLASS_NO_PURE_DECLS \
-	MyProject_Source_MyProject_Gun_h_12_ENHANCED_CONSTRUCTORS \
+	MyProject_Source_MyProject_Gun_h_14_PRIVATE_PROPERTY_OFFSET \
+	MyProject_Source_MyProject_Gun_h_14_SPARSE_DATA \
+	MyProject_Source_MyProject_Gun_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	MyProject_Source_MyProject_Gun_h_14_CALLBACK_WRAPPERS \
+	MyProject_Source_MyProject_Gun_h_14_INCLASS_NO_PURE_DECLS \
+	MyProject_Source_MyProject_Gun_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -2,7 +2,9 @@
 
 #pragma once
 
+
 #include "CoreMinimal.h"
+#include "Components/SplineComponent.h"
 #include "GameFramework/Actor.h"
 #include "Gun.generated.h"
 
@@ -22,5 +24,35 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
+public:
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnTriggerPressed();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnTriggerReleased();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void Shoot();
+
+	
+
+
+public:
+
+	//Root scene component
+	UPROPERTY(EditAnyWhere)
+	USceneComponent* sceneComponent = nullptr;
+	
+	//Spline defining where the gun is aming at
+	UPROPERTY(EditAnyWhere)
+	USplineComponent* splineComponent =nullptr;
+
+	//Gun mesh
+	UPROPERTY(EditAnywhere)
+	USkeletalMeshComponent*skeletalMesh =nullptr;
+
 
 };
