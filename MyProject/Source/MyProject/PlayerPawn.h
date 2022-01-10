@@ -28,6 +28,19 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+protected:
+
+	//Trigger Inputs
+	void OnLeftTriggerPressed();
+	void OnLeftTriggerReleased();
+	void OnRightTriggerPressed();
+	void OnRightTriggerReleased();
+
+	//Sticks Inputs
+	void LeftStickX(float axisValue);
+	void LeftStickY(float axisValue);
+	void RightStickX(float axisValue);
+	void RightStickY(float axisValue);
 
 public:
 
@@ -41,7 +54,11 @@ public:
 	UHand* leftHand		= nullptr;
 
 	//Weapons
-	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category ="Weapons")
-	TArray<UBlueprint*> guns;
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category ="Weapons")//Array of Gun blueprints. At the start of the game they 
+	TArray<UBlueprint*> gunsBlueprints;								//will be casted to AGun classes. /!\Might not be the best way
+
+	//Array of AGuns. Obtained from casting the previous blueprints
+	TArray<AGun*> guns;
+
 
 };
