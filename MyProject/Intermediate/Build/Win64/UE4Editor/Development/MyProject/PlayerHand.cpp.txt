@@ -1,3 +1,0 @@
-C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
-C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Source\MyProject\PlayerHand.h
-C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\PlayerHand.generated.h

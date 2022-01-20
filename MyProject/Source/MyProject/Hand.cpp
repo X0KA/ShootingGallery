@@ -10,7 +10,10 @@ UHand::UHand()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	//Create Spline and attach to root
+	gun = CreateDefaultSubobject<UChildActorComponent>("Gun");
+	gun->AttachToComponent(this, FAttachmentTransformRules::KeepRelativeTransform);
+
 }
 
 
@@ -30,3 +33,12 @@ void UHand::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 	// ...
 }
 
+bool UHand::SetCurrentGun(AGun* newGun) {
+	//If no gun is selected, return
+	if (newGun == nullptr)
+		return false;
+
+	//currentGun = newGun
+
+	return true;
+}

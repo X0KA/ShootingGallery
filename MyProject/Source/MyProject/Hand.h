@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Gun.h"
+#include "Components/ChildActorComponent.h"
 #include "Components/SceneComponent.h"
 #include "Hand.generated.h"
  
@@ -27,6 +28,13 @@ public:
 
 public:
 
+	UFUNCTION(BlueprintCallable)
+	bool SetCurrentGun(AGun* newGun);
+
+public:
+
 	//Weapon being currently used by this hand
-	AGun* currentWeapon;
+	UPROPERTY(EditAnyWhere)
+	UChildActorComponent* gun = nullptr;
+	
 };

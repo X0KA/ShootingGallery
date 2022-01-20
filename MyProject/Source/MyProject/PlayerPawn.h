@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Gun.h"
 #include "Hand.h"
+#include "MotionControllerComponent.h"
 #include "GameFramework/Pawn.h"
 #include "PlayerPawn.generated.h"
 
@@ -47,6 +48,13 @@ public:
 	//Root component
 	USceneComponent* rootSceneComponent = nullptr;
 
+	
+	//Motion Controllers
+	//UPROPERTY(EditAnyWhere)
+	UMotionControllerComponent* rightMotionController = nullptr;
+	//UPROPERTY(EditAnyWhere)
+	//UMotionControllerComponent* leftMotionController = nullptr;
+
 	//Hands
 	UPROPERTY(EditAnyWhere)
 	UHand* rightHand	= nullptr;
@@ -59,6 +67,7 @@ public:
 
 	//Array of AGuns. Obtained from casting the previous blueprints
 	TArray<AGun*> guns;
+
 
 
 };

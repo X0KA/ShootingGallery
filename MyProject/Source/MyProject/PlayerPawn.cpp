@@ -13,11 +13,22 @@ APlayerPawn::APlayerPawn()
 	if (rootSceneComponent)
 		SetRootComponent(rootSceneComponent);
 
+	//~~Motion controllers~~
+	//Create them and attach them to the scene root
+	//rightMotionController = CreateDefaultSubobject<UMotionControllerComponent>("Right Motion Controller");
+	//rightMotionController->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
+
+	//leftMotionController = CreateDefaultSubobject<UMotionControllerComponent>("Left Motion Controller");
+	//leftMotionController->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	
+	//~~Player hands~~
+	//Create them and attach them to their respective motion controllers
 	rightHand = CreateDefaultSubobject<UHand>("Right Hand");
-	rightHand->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	//rightHand->AttachToComponent(rightMotionController, FAttachmentTransformRules::KeepRelativeTransform);
 
 	leftHand = CreateDefaultSubobject<UHand>("Left Hand");
-	leftHand->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	//leftHand->AttachToComponent(leftMotionController, FAttachmentTransformRules::KeepRelativeTransform);
+
 
 }
 
@@ -31,8 +42,12 @@ void APlayerPawn::BeginPlay()
 	{
 		for (int i = 0; i < gunsBlueprints.Num(); ++i) {
 			AGun* newGun = Cast<AGun>(gunsBlueprints[i]);
+			if (newGun)
+				guns.Add(newGun);
 		}
 	}
+
+
 }
 
 // Called every frame
@@ -45,22 +60,22 @@ void APlayerPawn::Tick(float DeltaTime)
 
 void APlayerPawn::OnLeftTriggerPressed()
 {
-	leftHand->currentWeapon->OnTriggerPressed();
+	Cast<AGun>(leftHand->gun)->OnTriggerPressed();
 }
 
 void APlayerPawn::OnLeftTriggerReleased()
 {
-	leftHand->currentWeapon->OnTriggerReleased();
+	Cast<AGun>(leftHand->gun)->OnTriggerReleased();
 }
 
 void APlayerPawn::OnRightTriggerPressed()
 {					
-	rightHand->currentWeapon->OnTriggerPressed();
+	Cast<AGun>(rightHand->gun)->OnTriggerPressed();
 }					
 					
 void APlayerPawn::OnRightTriggerReleased()
 {
-	rightHand->currentWeapon->OnTriggerReleased();
+	Cast<AGun>(rightHand->gun)->OnTriggerReleased();
 }
 
 void APlayerPawn::LeftStickX(float axisValue) {
