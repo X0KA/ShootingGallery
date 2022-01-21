@@ -46,8 +46,6 @@ void APlayerPawn::BeginPlay()
 				guns.Add(newGun);
 		}
 	}
-
-
 }
 
 // Called every frame
