@@ -1,12 +1,20 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\Juanito\Documents\GitHub\ShootingGallery).
+  Parsing headers for MyProjectEditor
+    Running UnrealHeaderTool "C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\MyProject.uproject" "C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\MyProjectEditor\Development\MyProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\Juanito\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  Reflection code generated for MyProjectEditor in 2,7565218 seconds
   Building MyProjectEditor...
   Using Visual Studio 2019 14.28.29914 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 4 actions with 16 processes...
-    [1/4] PlayerPawn.cpp
-    [2/4] UE4Editor-MyProject.lib
+  Building 9 actions with 16 processes...
+    [1/9] MyProject.init.gen.cpp
+    [2/9] Hand.cpp
+    [3/9] Hand.gen.cpp
+    [4/9] ShootingGalleryGameMode.cpp
+    [5/9] PlayerPawn.gen.cpp
+    [6/9] PlayerPawn.cpp
+    [7/9] UE4Editor-MyProject.lib
        Creando biblioteca C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject.lib y objeto C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject.exp
-    [3/4] UE4Editor-MyProject.dll
+    [8/9] UE4Editor-MyProject.dll
        Creando biblioteca C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject.suppressed.lib y objeto C:\Users\Juanito\Documents\GitHub\ShootingGallery\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject.suppressed.exp
-    [4/4] MyProjectEditor.target
-  Total time in Parallel executor: 1,13 seconds
-  Total execution time: 1,46 seconds
+    [9/9] MyProjectEditor.target
+  Total time in Parallel executor: 1,26 seconds
+  Total execution time: 4,42 seconds

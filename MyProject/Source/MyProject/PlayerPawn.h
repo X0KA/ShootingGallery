@@ -51,14 +51,14 @@ public:
 	
 	//Motion Controllers
 	//UPROPERTY(EditAnyWhere)
-	UMotionControllerComponent* rightMotionController = nullptr;
+	//UMotionControllerComponent* rightMotionController = nullptr;
 	//UPROPERTY(EditAnyWhere)
 	//UMotionControllerComponent* leftMotionController = nullptr;
 
 	//Hands
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditAnyWhere,BlueprintReadWrite, Category = "Hands")
 	UHand* rightHand	= nullptr;
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category ="Hands")
 	UHand* leftHand		= nullptr;
 
 	//Weapons

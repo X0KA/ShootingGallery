@@ -2,6 +2,7 @@
 
 
 #include "Hand.h"
+#include "Components/ChildActorComponent.h"
 
 // Sets default values for this component's properties
 UHand::UHand()
@@ -10,10 +11,7 @@ UHand::UHand()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	//Create Spline and attach to root
-	gun = CreateDefaultSubobject<UChildActorComponent>("Gun");
-	gun->AttachToComponent(this, FAttachmentTransformRules::KeepRelativeTransform);
-
+	
 }
 
 
@@ -21,7 +19,6 @@ UHand::UHand()
 void UHand::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 
@@ -33,12 +30,19 @@ void UHand::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 	// ...
 }
 
-bool UHand::SetCurrentGun(AGun* newGun) {
-	//If no gun is selected, return
-	if (newGun == nullptr)
-		return false;
+bool UHand::SetDefaultGun() {
+	
+	FActorSpawnParameters spawnParams;
+	AActor* newGun = GetWorld()->SpawnActor<AActor>(defaultGun);
 
-	//currentGun = newGun
+	newGun->AttachToComponent(this, FAttachmentTransformRules::KeepRelativeTransform);
+
+	currentGun = newGun;
 
 	return true;
+}
+
+AGun* UHand::GetCurrentGun()
+{
+	return Cast<AGun>(currentGun);
 }
