@@ -2,6 +2,8 @@
 
 
 #include "PlayerPawn.h"
+#include "XRMotionControllerBase.h"
+#include "Camera/CameraComponent.h" 
 
 // Sets default values
 APlayerPawn::APlayerPawn()
@@ -13,21 +15,30 @@ APlayerPawn::APlayerPawn()
 	if (rootSceneComponent)
 		SetRootComponent(rootSceneComponent);
 
+	//Setup Camera
+	headCamera = CreateDefaultSubobject<UCameraComponent>("HeadCamera");
+	headCamera->SetupAttachment(rootSceneComponent);
+
+
 	//~~Motion controllers~~
 	//Create them and attach them to the scene root
-	//rightMotionController = CreateDefaultSubobject<UMotionControllerComponent>("Right Motion Controller");
-	//rightMotionController->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	rightMotionController = CreateDefaultSubobject<UMotionControllerComponent>("Right Motion Controller");
+	rightMotionController->SetupAttachment(rootSceneComponent);
+	rightMotionController->MotionSource = FXRMotionControllerBase::RightHandSourceId;
+	rightMotionController->PlayerIndex = 0;
 
-	//leftMotionController = CreateDefaultSubobject<UMotionControllerComponent>("Left Motion Controller");
-	//leftMotionController->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	
+	leftMotionController = CreateDefaultSubobject<UMotionControllerComponent>("Left Motion Controller");
+	leftMotionController->SetupAttachment(rootSceneComponent);
+	leftMotionController->MotionSource = FXRMotionControllerBase::LeftHandSourceId;
+	leftMotionController->PlayerIndex = 0;
+
 	//~~Player hands~~
 	//Create them and attach them to their respective motion controllers
 	rightHand = CreateDefaultSubobject<UHand>("Right Hand");
-	//rightHand->AttachToComponent(rightMotionController, FAttachmentTransformRules::KeepRelativeTransform);
+	rightHand->AttachToComponent(rightMotionController, FAttachmentTransformRules::KeepRelativeTransform);
 
-	leftHand = CreateDefaultSubobject<UHand>("Left Hand");
-	//leftHand->AttachToComponent(leftMotionController, FAttachmentTransformRules::KeepRelativeTransform);
+	leftHand = CreateDefaultSubobject<UHand>(("Left Hand"));
+	leftHand->AttachToComponent(leftMotionController, FAttachmentTransformRules::KeepRelativeTransform);
 
 
 }

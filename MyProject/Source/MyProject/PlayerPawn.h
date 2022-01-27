@@ -9,6 +9,8 @@
 #include "GameFramework/Pawn.h"
 #include "PlayerPawn.generated.h"
 
+class UCameraComponent;
+
 UCLASS()
 class MYPROJECT_API APlayerPawn : public APawn
 {
@@ -46,14 +48,18 @@ protected:
 public:
 
 	//Root component
+	UPROPERTY(EditAnyWhere, BlueprintreadWrite, Category = __hide)
 	USceneComponent* rootSceneComponent = nullptr;
 
-	
+	//Camera
+	UPROPERTY(EditAnyWhere, BlueprintreadWrite)
+	UCameraComponent* headCamera = nullptr;
+
 	//Motion Controllers
-	//UPROPERTY(EditAnyWhere)
-	//UMotionControllerComponent* rightMotionController = nullptr;
-	//UPROPERTY(EditAnyWhere)
-	//UMotionControllerComponent* leftMotionController = nullptr;
+	UPROPERTY(EditAnyWhere, BlueprintreadWrite)
+	UMotionControllerComponent* rightMotionController = nullptr;
+	UPROPERTY(EditAnyWhere, BlueprintreadWrite)
+	UMotionControllerComponent* leftMotionController = nullptr;
 
 	//Hands
 	UPROPERTY(EditAnyWhere,BlueprintReadWrite, Category = "Hands")

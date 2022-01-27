@@ -14,13 +14,14 @@ AGun::AGun()
 		SetRootComponent(rootSceneComponent);
 
 
-	//Create Spline and attach to root
-	splineComponent = CreateDefaultSubobject<USplineComponent>("Spline");
-	splineComponent->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
 
 	//Create default skeletalMesh and attach to root
 	skeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>("Skeletal Mesh");
 	skeletalMesh->AttachToComponent(rootSceneComponent, FAttachmentTransformRules::KeepRelativeTransform);
+
+	//Create Spline and attach to root
+	splineComponent = CreateDefaultSubobject<USplineComponent>("Spline");
+	splineComponent->AttachToComponent(skeletalMesh, FAttachmentTransformRules::KeepRelativeTransform);
 }
 
 // Called when the game starts or when spawned
