@@ -36,9 +36,6 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void Shoot();
 
-	
-
-
 public:
 
 	//Root scene component
@@ -54,4 +51,8 @@ public:
 	USkeletalMeshComponent*skeletalMesh =nullptr;
 
 
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Properties")
+	float fireRate = 0.f;
 };

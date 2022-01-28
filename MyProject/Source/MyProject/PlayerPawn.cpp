@@ -69,22 +69,22 @@ void APlayerPawn::Tick(float DeltaTime)
 
 void APlayerPawn::OnLeftTriggerPressed()
 {
-	//Cast<AGun>(leftHand->gun)->OnTriggerPressed();
+	leftHand->GetCurrentGun()->OnTriggerPressed();
 }
 
 void APlayerPawn::OnLeftTriggerReleased()
 {
-	//Cast<AGun>(leftHand->gun)->OnTriggerReleased();
+	leftHand->GetCurrentGun()->OnTriggerReleased();
 }
 
 void APlayerPawn::OnRightTriggerPressed()
 {					
-	//Cast<AGun>(rightHand->gun)->OnTriggerPressed();
+	rightHand->GetCurrentGun()->OnTriggerPressed();
 }					
 					
 void APlayerPawn::OnRightTriggerReleased()
 {
-	//Cast<AGun>(rightHand->gun)->OnTriggerReleased();
+	rightHand->GetCurrentGun()->OnTriggerReleased();
 }
 
 void APlayerPawn::LeftStickX(float axisValue) {

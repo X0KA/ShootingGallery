@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\MyProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{FD084492-A072-4EAE-9163-29DD71C95873}</UniqueIdentifier>
+      <UniqueIdentifier>{94B293D9-7024-4757-88DE-6C63A232FCF3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{DAE8A59D-4444-4190-83F3-054C6421BC17}</UniqueIdentifier>
+      <UniqueIdentifier>{077812FB-C0FA-4922-A821-3B2490EC7712}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -28,7 +28,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\MyProject">
-      <UniqueIdentifier>{2BB6B547-9778-4526-B7FC-4FA1A679B877}</UniqueIdentifier>
+      <UniqueIdentifier>{63A96361-65FF-4A8D-AA74-D2E105F99939}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\MyProject\Gun.cpp">
       <Filter>Source\MyProject</Filter>
@@ -55,6 +55,12 @@
       <Filter>Source\MyProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\MyProject\PlayerPawn.h">
+      <Filter>Source\MyProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MyProject\Projectile.cpp">
+      <Filter>Source\MyProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyProject\Projectile.h">
       <Filter>Source\MyProject</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\MyProject\ShootingGalleryGameMode.cpp">
