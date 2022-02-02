@@ -50,7 +50,6 @@ public:
 	UPROPERTY(EditAnywhere)
 	USkeletalMeshComponent*skeletalMesh =nullptr;
 
-
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Properties")

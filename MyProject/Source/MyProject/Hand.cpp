@@ -32,7 +32,6 @@ void UHand::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 
 bool UHand::SetDefaultGun() {
 	
-	FActorSpawnParameters spawnParams;
 	AActor* newGun = GetWorld()->SpawnActor<AActor>(defaultGun);
 
 	newGun->AttachToComponent(this, FAttachmentTransformRules::KeepRelativeTransform);

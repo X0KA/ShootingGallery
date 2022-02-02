@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\MyProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{94B293D9-7024-4757-88DE-6C63A232FCF3}</UniqueIdentifier>
+      <UniqueIdentifier>{4378E859-4868-43F6-9404-3E8754591494}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{077812FB-C0FA-4922-A821-3B2490EC7712}</UniqueIdentifier>
+      <UniqueIdentifier>{30A8C1B0-FBC0-44F9-94EA-26A56446D87F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -28,8 +28,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\MyProject">
-      <UniqueIdentifier>{63A96361-65FF-4A8D-AA74-D2E105F99939}</UniqueIdentifier>
+      <UniqueIdentifier>{9B1A0FA6-822A-49AA-8696-CA28074A55FA}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\MyProject\ActorPoolComponent.cpp">
+      <Filter>Source\MyProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyProject\ActorPoolComponent.h">
+      <Filter>Source\MyProject</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\MyProject\Gun.cpp">
       <Filter>Source\MyProject</Filter>
     </ClCompile>
