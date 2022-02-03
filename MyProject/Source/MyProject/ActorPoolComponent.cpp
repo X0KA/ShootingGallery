@@ -38,16 +38,25 @@ void UActorPoolComponent::InitializePool()
 	for (int i = 0; i < poolSize; i++)
 	{
 		indexPool.Add(i);
-		actorPool.Add(GetWorld()->SpawnActor<AActor>(bulletActor));
+
+		AActor* newActor = GetWorld()->SpawnActor<AActor>(bulletActor);
+		actorPool.Add(newActor);
+		newActor->SetHidden(true);
 	}
 }
 
 AActor* UActorPoolComponent::EnableNextActor()
 {
+	AActor* nextActor = nullptr;
 
+	
+
+	return nextActor;
 }
 
 bool UActorPoolComponent::DisableActor(AActor* actor_)
 {
 
+
+	return true;
 }

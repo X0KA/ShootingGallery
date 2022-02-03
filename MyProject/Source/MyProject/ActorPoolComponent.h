@@ -33,9 +33,9 @@ public:
 	//Activate the next unactive actor in the pool and return it
 	AActor* EnableNextActor();
 
-	//Disable the actor and update the index pool. 
-	//return true if disabled succesfully
-	//return false if the actor is not among the active actors
+	/*Disable the actor and update the index pool. 
+	return true if disabled succesfully
+	return false if the actor is not among the active actors*/
 	bool DisableActor(AActor* actor_);
 
 public:
@@ -44,10 +44,10 @@ public:
 	TSubclassOf<AActor> bulletActor;
 	
 	//Amount of actors in the pool
-	UPROPERTY(BlueprintReadWrite, Category = "Pool properties")
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Properties")
 	int poolSize=0;
 
-	UPROPERTY(BlueprintReadWrite, Category = "Pool properties")
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Properties")
 	bool initOnPlay = true;
 
 private:
