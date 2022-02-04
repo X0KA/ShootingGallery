@@ -44,8 +44,9 @@ void UActorPoolComponent::InitializePool()
 		actorPool.Add(newActor);
 		
 		//Set all actor in the pool as hidden by default
-		newActor->SetHidden(true);
+		newActor->SetActorHiddenInGame(true);
 		newActor->SetActorEnableCollision(false);
+		newActor->SetActorTickEnabled(false);
 	}
 }
 
@@ -57,9 +58,16 @@ AActor* UActorPoolComponent::GetNextActor()
 	for (uint16 i = activeActors; i < poolSize; i++){
 		if (actorPool[indexPool[i]]->IsHidden()) {
 			nextActor = actorPool[indexPool[i]];
-			nextActor->SetHidden(false);
+
+			//Hide and deactivate item
+			nextActor->SetActorHiddenInGame(false);
 			nextActor->SetActorEnableCollision(true);
+			nextActor->SetActorTickEnabled(true);
+
 			activeActors++;
+
+			UE_LOG(LogTemp, Warning, TEXT("Actor activated - Active actors: %d"), activeActors);
+			break;
 		}
 	}
 	
@@ -76,16 +84,17 @@ bool UActorPoolComponent::DisableActor(AActor* actor_)
 		if (actorPool[indexPool[i]] == actor_) {
 			AActor* actorToDisable = actorPool[indexPool[i]];
 		
-			actorToDisable->SetHidden(true);
+			actorToDisable->SetActorHiddenInGame(true);
 			actorToDisable->SetActorEnableCollision(false);
+			actorToDisable->SetActorTickEnabled(false);
 
 			//Swap indexes with the last active actor
 			uint16 currentIndex= indexPool[i];
 			indexPool[i] = indexPool[activeActors - 1];
 			indexPool[activeActors - 1] = currentIndex;
-
-			activeActors--;
 			
+			activeActors--;
+
 			return true;
 		}
 	}
