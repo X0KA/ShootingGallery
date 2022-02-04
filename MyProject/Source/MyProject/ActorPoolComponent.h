@@ -13,7 +13,7 @@ class MYPROJECT_API UActorPoolComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
-public:	
+public:
 	// Sets default values for this component's properties
 	UActorPoolComponent();
 
@@ -21,7 +21,7 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
@@ -31,33 +31,41 @@ public:
 	void InitializePool();
 
 	//Activate the next unactive actor in the pool and return it
-	AActor* EnableNextActor();
+	//~~ Make sure the returned actor ISVALID !!
+	UFUNCTION(BlueprintCallable)
+	AActor* GetNextActor();
 
-	/*Disable the actor and update the index pool. 
+	/*Disable the actor and update the index pool.
 	return true if disabled succesfully
 	return false if the actor is not among the active actors*/
+	UFUNCTION(BlueprintCallable)
 	bool DisableActor(AActor* actor_);
+
+	//Return an array with all active actors from the pool
+	UFUNCTION(BlueprintCallable)
+	TArray<AActor*> GetActiveActors();
+
+	
+	void GetActiveActors(TArray<AActor*>& actorArray);
 
 public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Bullet")
-	TSubclassOf<AActor> bulletActor;
-	
+		TSubclassOf<AActor> bulletActor;
+
 	//Amount of actors in the pool
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Properties")
-	int poolSize=0;
+		int poolSize = 0;
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Properties")
-	bool initOnPlay = true;
+		bool initOnPlay = true;
 
 private:
 
-	/*Each index points to his respective actor. When an actor is activated, 
-	instead of swapping its position in the actor pool for another one that 
-	is unactive, their indexes will be swapped instead, for the performance's
-	sake*/
+	/*In the index Pool, indexes pointing to active actors are located first,
+	and indexes that point to unactive actors are located last*/
 	TArray<uint16> indexPool;
 	TArray<AActor*> actorPool;
 
-	uint16 activeActors[0];
+	uint16 activeActors {0};
 };

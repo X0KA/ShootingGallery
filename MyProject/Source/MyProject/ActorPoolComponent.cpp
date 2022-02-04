@@ -39,17 +39,32 @@ void UActorPoolComponent::InitializePool()
 	{
 		indexPool.Add(i);
 
+		//Create the actors of the pool
 		AActor* newActor = GetWorld()->SpawnActor<AActor>(bulletActor);
 		actorPool.Add(newActor);
+		
+		//Set all actor in the pool as hidden by default
 		newActor->SetHidden(true);
+		newActor->SetActorEnableCollision(false);
 	}
 }
 
-AActor* UActorPoolComponent::EnableNextActor()
+AActor* UActorPoolComponent::GetNextActor()
 {
 	AActor* nextActor = nullptr;
 
+	//Only iterate through the actors that are not active
+	for (uint16 i = activeActors; i < poolSize; i++){
+		if (actorPool[indexPool[i]]->IsHidden()) {
+			nextActor = actorPool[indexPool[i]];
+			nextActor->SetHidden(false);
+			nextActor->SetActorEnableCollision(true);
+			activeActors++;
+		}
+	}
 	
+	if (nextActor == nullptr)
+		UE_LOG(LogTemp, Warning, TEXT("GetNextActor is nullptr"));
 
 	return nextActor;
 }
@@ -57,6 +72,40 @@ AActor* UActorPoolComponent::EnableNextActor()
 bool UActorPoolComponent::DisableActor(AActor* actor_)
 {
 
+	for (uint16 i = 0; i < activeActors; i++){
+		if (actorPool[indexPool[i]] == actor_) {
+			AActor* actorToDisable = actorPool[indexPool[i]];
+		
+			actorToDisable->SetHidden(true);
+			actorToDisable->SetActorEnableCollision(false);
+
+			//Swap indexes with the last active actor
+			uint16 currentIndex= indexPool[i];
+			indexPool[i] = indexPool[activeActors - 1];
+			indexPool[activeActors - 1] = currentIndex;
+
+			activeActors--;
+			
+			return true;
+		}
+	}
 
 	return true;
+}
+
+TArray<AActor*> UActorPoolComponent::GetActiveActors()
+{
+	TArray<AActor*> retArray;
+	for (int i = 0; i < activeActors; i++) {
+		retArray.Add(actorPool[indexPool[i]]);
+	}
+
+	return retArray;
+}
+
+void UActorPoolComponent::GetActiveActors(TArray<AActor*>& actorArray)
+{
+	for (int i = 0; i < activeActors; i++) {
+		actorArray.Add(actorPool[indexPool[i]]);
+	}
 }

@@ -43,11 +43,11 @@ public:
 	USceneComponent* rootSceneComponent = nullptr;
 	
 	//Spline defining where the gun is aming at
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	USplineComponent* splineComponent =nullptr;
 
 	//Gun mesh
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent*skeletalMesh =nullptr;
 
 public:
