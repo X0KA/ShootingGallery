@@ -48,6 +48,8 @@ public:
 	
 	void GetActiveActors(TArray<AActor*>& actorArray);
 
+	void SetActorEnabled(AActor* actor_, bool toEnable);
+
 public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Bullet")
@@ -68,4 +70,5 @@ private:
 	TArray<AActor*> actorPool;
 
 	uint16 activeActors {0};
+
 };

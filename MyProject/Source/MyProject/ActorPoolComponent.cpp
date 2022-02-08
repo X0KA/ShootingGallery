@@ -30,7 +30,6 @@ void UActorPoolComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
 }
 
 void UActorPoolComponent::InitializePool()
@@ -44,9 +43,7 @@ void UActorPoolComponent::InitializePool()
 		actorPool.Add(newActor);
 		
 		//Set all actor in the pool as hidden by default
-		newActor->SetActorHiddenInGame(true);
-		newActor->SetActorEnableCollision(false);
-		newActor->SetActorTickEnabled(false);
+		SetActorEnabled(newActor, false);
 	}
 }
 
@@ -60,9 +57,7 @@ AActor* UActorPoolComponent::GetNextActor()
 			nextActor = actorPool[indexPool[i]];
 
 			//Hide and deactivate item
-			nextActor->SetActorHiddenInGame(false);
-			nextActor->SetActorEnableCollision(true);
-			nextActor->SetActorTickEnabled(true);
+			SetActorEnabled(nextActor, true);
 
 			activeActors++;
 
@@ -84,9 +79,7 @@ bool UActorPoolComponent::DisableActor(AActor* actor_)
 		if (actorPool[indexPool[i]] == actor_) {
 			AActor* actorToDisable = actorPool[indexPool[i]];
 		
-			actorToDisable->SetActorHiddenInGame(true);
-			actorToDisable->SetActorEnableCollision(false);
-			actorToDisable->SetActorTickEnabled(false);
+			SetActorEnabled(actor_, false);
 
 			//Swap indexes with the last active actor
 			uint16 currentIndex= indexPool[i];
@@ -117,4 +110,14 @@ void UActorPoolComponent::GetActiveActors(TArray<AActor*>& actorArray)
 	for (int i = 0; i < activeActors; i++) {
 		actorArray.Add(actorPool[indexPool[i]]);
 	}
+}
+
+void UActorPoolComponent::SetActorEnabled(AActor* actor_, bool toEnable)
+{
+	if (!actor_)
+		return;
+
+	actor_->SetActorHiddenInGame(!toEnable);
+	actor_->SetActorEnableCollision(toEnable);
+	actor_->SetActorTickEnabled(toEnable);
 }
